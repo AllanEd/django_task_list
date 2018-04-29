@@ -1,0 +1,55 @@
+// scss-lint:disable PropertySortOrder TrailingWhitespace
+$white: #fff;
+$gray-bg: #fafafa;
+$gray-border: #eee;
+
+body {
+  background-color: $gray-bg;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.task {
+  display: flex;
+  align-items: flex-start;
+  padding: 10px 20px;
+  border-top: 1px solid $gray-border;
+
+  &__done {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $white;
+    min-width: 30px;
+    height: 30px;
+    border: 1px solid $gray-border; 
+  }
+
+  &__content {
+    flex-basis: 100%;
+    padding: 0 20px;
+    word-break: break-all;
+  }
+}
+
+.done {
+  font-size: 20px;
+}
+
+.task-form {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 20px;
+
+  .form-group {
+    flex-basis: 100%;
+    margin-right: 20px;
+  }
+}

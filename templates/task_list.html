@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load bootstrap3 %}
+
+{% block content %}
+    <form action="" encytype="multipar/form-data" method="post" class="task-form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <ul class="tasks">
+        {% for task in task_list %}
+        <li class="task">
+            <a class="task__done {{task.done|yesno:'glyphicon glyphicon-ok done,'}}" href="?action=done&id={{task.pk}}&value={{task.done|yesno:'False,True'}}"></a>
+            <p class="task__content">
+                {{task.content}}
+            </p>
+            <a class="task__delete btn btn-danger" href='?action=delete&id={{task.pk}}' class='delete'>Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

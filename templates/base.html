@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ block_title }}</title>
+
+    {% load bootstrap3 %}
+
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'tasks/style.css' %}" />
+
+</head>
+<body>
+    <div class="container">
+        <h1>{{ page_title }}</h1>
+
+        {% bootstrap_messages %}
+
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
